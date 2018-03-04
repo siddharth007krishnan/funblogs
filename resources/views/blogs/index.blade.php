@@ -18,8 +18,11 @@
 			</div>
 		@endif
 		<hr>
-		<div>
-			<a href=" {{ url ("blog") }} " class="btn btn-primary">Create</a>
-		</div>
+		@if (Auth::user())
+			<div>
+				<a href=" {{ url ("blog") }} " class="btn btn-primary">Create</a>
+			</div>
+		@endif
+			
 	</div>
 @endsection

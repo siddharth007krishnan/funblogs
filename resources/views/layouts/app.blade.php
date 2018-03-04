@@ -61,8 +61,11 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
-        </main>
+			<div class="container">
+				@include ('layouts.messages')
+				@yield('content')
+			</div>
+		</main>
     </div>
 
     <!-- Scripts -->

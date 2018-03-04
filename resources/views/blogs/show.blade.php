@@ -16,11 +16,14 @@
 			<a href=" {{ url ("blogs") }} " class = "btn btn-primary">Back</a>
 		</div>
 		<br>
-		<div>
-			<a href=" {{ url ("blog/edit/$blog->id") }} " class = "btn btn-danger">EDIT</a>
-		</div>
+		@if (Auth::user())
+			<div>
+				<a href=" {{ url ("blog/edit/$blog->id") }} " class = "btn btn-danger">EDIT</a>
+			</div>
+		@endif
 		<br>
 		<br>
+		@if (Auth::user())
 		<div>
 			<form action =" {{ action('BlogsController@destroy' , ['id' => $blog->id]) }} " method="POST">
 				@method('DELETE')
@@ -30,6 +33,6 @@
 				</div>
 			</form>
 		</div>
-		
-	</div>
+		@endif
+		</div>
 @endsection
